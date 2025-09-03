@@ -4,7 +4,7 @@ pipeline {
     }
     tools {
         // Note: this should match with the tool name configured in your jenkins instance (JENKINS_URL/configureTools/)
-        maven "MVN_HOME"
+        maven "MVN"
         
     }
 	 environment {
@@ -13,18 +13,18 @@ pipeline {
         // This can be http or https
         NEXUS_PROTOCOL = "http"
         // Where your Nexus is running
-        NEXUS_URL = "18.216.151.197:8081/"
+        NEXUS_URL = "3.95.23.243:8081/"
         // Repository where we will upload the artifact
-        NEXUS_REPOSITORY = "soanrqube"
+        NEXUS_REPOSITORY = "simplecustomerapp"
         // Jenkins credential id to authenticate to Nexus OSS
-        NEXUS_CREDENTIAL_ID = "nexus_keygen"
+        NEXUS_CREDENTIAL_ID = "Nexus"
     }
     stages {
         stage("clone code") {
             steps {
                 script {
                     // Let's clone the source
-                    git 'https://github.com/betawins/sabear_simplecutomerapp.git';
+                    git 'https://github.com/ShivaJatin/sabear_simplecutomerapp.git';
                 }
             }
         }
